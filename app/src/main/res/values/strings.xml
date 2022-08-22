@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MVVM-Counties-app</string>
+    <string name="error_text">Error occured while loading data</string>
+</resources>

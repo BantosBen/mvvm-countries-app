@@ -1,0 +1,18 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+        maven { url "https://oss.jfrog.org/libs-snapshot" }
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven { url "https://oss.jfrog.org/libs-snapshot" }
+    }
+}
+rootProject.name = "MVVM-Counties-app"
+include ':app'
