@@ -5,7 +5,10 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.nerdpros.mvvm_counties_app.Country
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdSize
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
 import com.nerdpros.mvvm_counties_app.R
 import com.nerdpros.mvvm_counties_app.viewmodel.ListViewModel
 import kotlinx.android.synthetic.main.activity_main.*
@@ -25,13 +28,23 @@ class MainActivity : AppCompatActivity() {
             adapter = countryAdapter
         }
 
+        swipeRefreshLayout.setOnRefreshListener {
+            swipeRefreshLayout.isRefreshing = false
+            viewModel.refresh()
+        }
+
+        MobileAds.initialize(this)
+        val adRequest = AdRequest.Builder().build()
+        adView.loadAd(adRequest)
+
         setUpObserver()
     }
 
     private fun setUpObserver() {
         viewModel.countries.observe(this) { countries ->
             countries?.let { _countries ->
-                countryAdapter.updateCountries(_countries as ArrayList<Country>)
+                countriesList.visibility = View.VISIBLE
+                countryAdapter.updateCountries(_countries)
             }
         }
         viewModel.countryLoadError.observe(this) { isError ->

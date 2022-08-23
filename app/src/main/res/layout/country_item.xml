@@ -4,6 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="8dp">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <ImageView
         android:id="@+id/country_flag"
@@ -15,6 +21,8 @@
     <TextView
         android:id="@+id/country_name"
         android:layout_width="0dp"
+        android:layout_marginStart="8dp"
+        android:text="Kenya"
         android:layout_height="wrap_content"
         android:textAppearance="?textAppearanceBody1"
         android:textStyle="bold"
@@ -25,8 +33,10 @@
     <TextView
         android:id="@+id/country_capital"
         android:layout_width="0dp"
+        android:text="Nairobi"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
+        android:layout_marginStart="8dp"
         android:textAppearance="?textAppearanceBody2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/country_flag"

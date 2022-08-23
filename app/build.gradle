@@ -70,4 +70,7 @@ dependencies {
     testImplementation 'android.arch.core:core-testing:1.1.1'
 
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    // AdMob dependency
+    implementation 'com.google.android.gms:play-services-ads:21.1.0'
 }
