@@ -6,15 +6,15 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.AdSize
-import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.nerdpros.mvvm_counties_app.R
 import com.nerdpros.mvvm_counties_app.viewmodel.ListViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     private lateinit var viewModel: ListViewModel
+    private lateinit var interstitialAd: InterstitialAd
     private var countryAdapter = CountryAdapter(arrayListOf())
 
     override fun onCreate(savedInstanceState: Bundle?) {
